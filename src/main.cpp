@@ -28,8 +28,8 @@ int main(int argc, char **argv) {
 	cam = Camera::getInstance();
 	cam->launch();
 	
-	//Display *disp = NULL;
-	//disp = Display::getInstance();
+	Display *disp = NULL;
+	disp = Display::getInstance();
 	
 	while(1){usleep(1000);}
 
