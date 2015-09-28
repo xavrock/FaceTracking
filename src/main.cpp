@@ -19,7 +19,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 
 static bool facedetected = false;
-static Rect r;
+static Rect R;
 
 
 void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
