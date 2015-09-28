@@ -80,7 +80,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
         R.x = center.x;
         R.y = center.y;
         R.width = 2*radius + 40;
-        R.height = 2*radius + 40
+        R.height = 2*radius + 40;
         //Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20));
     }
 	}
