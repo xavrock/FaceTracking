@@ -184,7 +184,7 @@ void Camera::retrieveRGBImg(Mat img)
 	}
 	else
 	{
-		pthread_mutex_trylock(&mutexCamera);
+		pthread_mutex_lock(&mutexCamera);
 		if( capture.retrieve( bgrImage ) )
 		{
 			bgrImage.copyTo(img);
