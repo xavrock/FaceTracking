@@ -89,7 +89,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
         
         if(faces.size() > 0 )
         {
-			printf("Detected")
+			printf("Detected");
 		}
 		else
 		{
