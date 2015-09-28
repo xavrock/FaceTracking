@@ -86,6 +86,15 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
         //|CV_HAAR_SCALE_IMAGE
         ,
         Size(30, 30) );
+        
+        if(faces.size() > 0 )
+        {
+			printf("Detected")
+		}
+		else
+		{
+			facedetected = false;
+		}
 	}
 }
 
