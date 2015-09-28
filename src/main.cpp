@@ -13,6 +13,9 @@
 #include "Camera.h"
 #include "Display.h"
 
+#include "opencv2/opencv.hpp"
+#include "opencv2/highgui/highgui.hpp"
+
 /**
  * Main class of project FaceTracker
  *
@@ -24,14 +27,34 @@ int main(int argc, char **argv) {
 	// print a greeting to the console
 	printf("Hello World!\n");
 	
-	Camera *cam = NULL;
+	/*Camera *cam = NULL;
 	cam = Camera::getInstance();
 	cam->launch();
 	
 	Display *disp = NULL;
 	disp = Display::getInstance();
 	
-	while(1){usleep(1000);}
+	while(1){usleep(1000);}*/
+	VideoCapture 			capture;
+	capture.open(0);
+	
+	
+		int capture_height = capture.get(CV_CAP_PROP_FRAME_HEIGHT);
+		int capture_width = capture.get(CV_CAP_PROP_FRAME_WIDTH);
+
+		Mat depthImage = Mat(Size(capture_width,capture_height),CV_8UC1);
+		Mat grayImage = Mat(Size(capture_width,capture_height),CV_8UC1);
+		Mat bgrImage = Mat(Size(capture_width,capture_height),CV_8UC3);
+	
+	
+	while(1)
+	{
+		capture.grab();
+		capture.retrieve( bgrImage );
+		
+		imshow( "Display FaceTracker", bgrImage );
+		waitKey(1);
+	}
 
 	return 0;
 }
