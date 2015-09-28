@@ -55,7 +55,6 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
         Mat smallImgROI;
         vector<Rect> nestedObjects;
         Point center;
-        Scalar color = colors[i%8];
         int radius;
 
         double aspect_ratio = (double)r->width/r->height;
@@ -64,12 +63,12 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
             center.x = cvRound((r->x + r->width*0.5)*scale);
             center.y = cvRound((r->y + r->height*0.5)*scale);
             radius = cvRound((r->width + r->height)*0.25*scale);
-            circle( img, center, radius, color, 3, 8, 0 );
+            circle( img, center, radius, CV_RGB(0,128,255), 3, 8, 0 );
         }
         else
             rectangle( img, cvPoint(cvRound(r->x*scale), cvRound(r->y*scale)),
                        cvPoint(cvRound((r->x + r->width-1)*scale), cvRound((r->y + r->height-1)*scale)),
-                       color, 3, 8, 0);
+                       CV_RGB(0,128,255), 3, 8, 0);
     }
 }
 
