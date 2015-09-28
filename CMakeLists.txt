@@ -33,6 +33,7 @@ TARGET_LINK_LIBRARIES(
 	opencv_highgui
 	opencv_core
 	opencv_imgproc
+	opencv_objdetect
 	pthread
 )
 
