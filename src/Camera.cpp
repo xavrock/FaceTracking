@@ -125,7 +125,7 @@ void*  thread_HalCamera(void* dataHalCamera)
 
 		//gettimeofday(&end, NULL);
 		//t = (float)(end.tv_sec-start.tv_sec)*1000.0f + (float)(end.tv_usec - start.tv_usec)/1000.0f;
-		waitKey(30);		// Be sure to wait max 30ms before new grab
+		waitKey(10);		// Be sure to wait max 30ms before new grab
 	}
 	return NULL;
 }

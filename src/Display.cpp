@@ -120,7 +120,7 @@ void*  thread_HalDisplay(void* dataHalDisplay)
 		//printf("Display time : %f\n", t);
 		//if( t > 20 )
 		//	usleep(abs(20 - (int)t)*1000);
-		waitKey( 10 );		// Be sure to wait max 30ms before new grab
+		waitKey( 30 );		// Be sure to wait max 30ms before new grab
 
 		//gettimeofday(&endtempo, NULL);
 		//t = (float)(endtempo.tv_sec-start.tv_sec)*1000.0f + (float)(endtempo.tv_usec - start.tv_usec)/1000.0f;
