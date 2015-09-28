@@ -19,13 +19,13 @@
 #include "opencv2/imgproc/imgproc.hpp"
 
 static bool facedetected = false;
+static Rect r;
 
 
 void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 {
     int i = 0;
     double t = 0;
-    Rect R;
     vector<Rect> faces, faces2;
     const static Scalar colors[] =  { CV_RGB(0,0,255),
         CV_RGB(0,128,255),
@@ -75,8 +75,13 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
             rectangle( img, cvPoint(cvRound(r->x*scale), cvRound(r->y*scale)),
                        cvPoint(cvRound((r->x + r->width-1)*scale), cvRound((r->y + r->height-1)*scale)),
                        CV_RGB(0,128,255), 3, 8, 0);
+                       
         facedetected = true;
-        Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20));
+        R.x = center.x;
+        R.y = center.y;
+        R.width = 2*radius + 40;
+        R.height = 2*radius + 40
+        //Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20));
     }
 	}
 	else
