@@ -79,6 +79,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 	else
 	{
 		Mat ROI = img(R);
+		imshow("test", ROI)
 		cascade.detectMultiScale( ROI, faces,
         1.2, 2, 0
         |CV_HAAR_FIND_BIGGEST_OBJECT
