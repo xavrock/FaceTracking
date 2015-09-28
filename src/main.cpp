@@ -67,6 +67,9 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
             center.y = cvRound((r->y + r->height*0.5)*scale);
             radius = cvRound((r->width + r->height)*0.25*scale);
             circle( img, center, radius, CV_RGB(0,128,255), 3, 8, 0 );
+            rectangle( img, cvPoint(center.x - radius -20, center.y - radius - 20),
+                       cvPoint(center.x + radius +20, center.y + radius + 20),
+                       CV_RGB(0,128,255), 3, 8, 0);
         }
         else
             rectangle( img, cvPoint(cvRound(r->x*scale), cvRound(r->y*scale)),
@@ -79,7 +82,6 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 	else
 	{
 		Mat ROI = img(R);
-		imshow("test", ROI);
 		cascade.detectMultiScale( ROI, faces,
         1.2, 2, 0
         |CV_HAAR_FIND_BIGGEST_OBJECT
