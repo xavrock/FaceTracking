@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
 	
 	while(1){usleep(1000);}*/
 	
-	string cascadeName = "/usr/share/haarcascades/haarcascade_frontalface_alt2.xml";
+	string cascadeName = "/usr/share/lbpcascades/lbpcascade_frontalface.xml";
 	
 
     bool tryflip = false;
