@@ -18,6 +18,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
+static bool facedetected = false;
 
 
 void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
@@ -37,7 +38,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 
     cvtColor( img, gray, CV_BGR2GRAY );
     resize( gray, smallImg, smallImg.size(), 0, 0, INTER_LINEAR );
-    equalizeHist( smallImg, smallImg );
+    //equalizeHist( smallImg, smallImg );
 
     t = (double)cvGetTickCount();
     cascade.detectMultiScale( smallImg, faces,
