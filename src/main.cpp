@@ -42,8 +42,8 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 
     t = (double)cvGetTickCount();
     cascade.detectMultiScale( smallImg, faces,
-        1.6, 2, 0
-        //|CV_HAAR_FIND_BIGGEST_OBJECT
+        1.4, 2, 0
+        |CV_HAAR_FIND_BIGGEST_OBJECT
         //|CV_HAAR_DO_ROUGH_SEARCH
         |CV_HAAR_SCALE_IMAGE
         ,
