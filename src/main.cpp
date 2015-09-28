@@ -41,12 +41,12 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
 
     t = (double)cvGetTickCount();
     cascade.detectMultiScale( smallImg, faces,
-        1.4, 2, 0
+        1.6, 2, 0
         //|CV_HAAR_FIND_BIGGEST_OBJECT
         //|CV_HAAR_DO_ROUGH_SEARCH
         |CV_HAAR_SCALE_IMAGE
         ,
-        Size(30, 30) );
+        Size(40, 40) );
     t = (double)cvGetTickCount() - t;
     printf( "detection time = %g ms\n", t/((double)cvGetTickFrequency()*1000.) );
     for( vector<Rect>::const_iterator r = faces.begin(); r != faces.end(); r++, i++ )
@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
     bool tryflip = false;
     
     CascadeClassifier cascade;
-    double scale = 1.4;
+    double scale = 1.6;
     
     if( !cascade.load( cascadeName ) )
     {
