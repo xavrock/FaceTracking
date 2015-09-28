@@ -73,7 +73,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
                        cvPoint(cvRound((r->x + r->width-1)*scale), cvRound((r->y + r->height-1)*scale)),
                        CV_RGB(0,128,255), 3, 8, 0);
         facedetected = true;
-        Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20
+        Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20));
     }
 	}
 	else
