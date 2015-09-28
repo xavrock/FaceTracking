@@ -42,8 +42,7 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
     //equalizeHist( smallImg, smallImg );
 
    // t = (double)cvGetTickCount();
-   if(!facedetected)
-   {
+   
     cascade.detectMultiScale( smallImg, faces,
         1.2, 2, 0
         |CV_HAAR_FIND_BIGGEST_OBJECT
@@ -75,35 +74,8 @@ void detectAndDraw( Mat img, CascadeClassifier cascade, double scale )
             rectangle( img, cvPoint(cvRound(r->x*scale), cvRound(r->y*scale)),
                        cvPoint(cvRound((r->x + r->width-1)*scale), cvRound((r->y + r->height-1)*scale)),
                        CV_RGB(0,128,255), 3, 8, 0);
-                       
-        facedetected = true;
-        R.x = center.x;
-        R.y = center.y;
-        R.width = 2*radius + 40;
-        R.height = 2*radius + 40;
-        //Rect R(cvPoint(center.x - radius -20, center.y - radius - 20), cvPoint(center.x + radius +20, center.y + radius + 20));
-    }
-	}
-	else
-	{
-		Mat ROI = img(R);
-		cascade.detectMultiScale( ROI, faces,
-        1.2, 2, 0
-        |CV_HAAR_FIND_BIGGEST_OBJECT
-        //|CV_HAAR_DO_ROUGH_SEARCH
-        //|CV_HAAR_SCALE_IMAGE
-        ,
-        Size(30, 30) );
-        
-        if(faces.size() > 0 )
-        {
-			printf("Detected\n");
-		}
-		else
-		{
-			facedetected = false;
-		}
-	}
+      }                 
+       
 }
 
 
